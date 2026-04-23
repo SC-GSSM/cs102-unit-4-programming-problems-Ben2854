@@ -6,7 +6,7 @@ public class Unit4 {
         // Test your methods here by creating an instance and calling methods
         Unit4 unit = new Unit4();
         // Example: test sumNumbers
-        System.out.println("sumNumbers(5) = " + unit.sumNumbers(5));  // Expected: 15
+        unit.multiplicationTable(4);  // Expected: 15
     }
 
     /**
@@ -29,8 +29,11 @@ public class Unit4 {
      * @return the sum of integers from 1 to n
      */
     public int sumNumbers(int n) {
-        // TODO: Implement this method
-        return 0;
+        int sum = 0;
+        for (int i = 1; i<=n; i++) {
+            sum += i;
+        }
+        return sum;
     }
 
     /**
@@ -54,8 +57,12 @@ public class Unit4 {
      * @return the repeated string
      */
     public String repeatString(String str, int n) {
-        // TODO: Implement this method
-        return "";
+        String repeatedString = "";
+        for (int i = 0; i<n; i++) {
+            repeatedString += str;
+        }
+
+        return repeatedString;
     }
 
     /**
@@ -78,8 +85,11 @@ public class Unit4 {
      * @return the factorial of n
      */
     public int findFactorial(int n) {
-        // TODO: Implement this method
-        return 0;
+        int factorial = 1;
+        for (int i = 1; i<=n; i++) {
+            factorial *= i;
+        }
+        return factorial;
     }
 
     /**
@@ -102,8 +112,15 @@ public class Unit4 {
      * @return the number of vowels found
      */
     public int countVowels(String str) {
-        // TODO: Implement this method
-        return 0;
+        int count = 0;
+        String lowerStr = str.toLowerCase();
+        for (int i=0; i<str.length(); i++) {
+            char temp = lowerStr.charAt(i);
+            if (temp == 'a' || temp == 'e' || temp == 'i' || temp == 'o' || temp == 'u') {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -129,8 +146,14 @@ public class Unit4 {
      * @return true if the string is a palindrome, false otherwise
      */
     public boolean isPalindrome(String str) {
-        // TODO: Implement this method
-        return false;
+        String reversed = "";
+        for (int i = str.length()-1; i>=0; i--) {
+            reversed += str.charAt(i);
+        }
+        if (reversed.equals(str)) {
+            return true;
+        }
+        else {return false;}
     }
 
     /**
@@ -161,6 +184,24 @@ public class Unit4 {
      */
     public void printAsteriskPatterns(int n) {
         // TODO: Implement this method
+        for (int i = 0; i < n; i++) {
+            System.out.print("*");
+        }
+        System.out.print("\n");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j<i) {
+                    System.out.print("*");
+                }
+            }
+            System.out.print("\n");
+        }
     }
 
     /**
@@ -185,5 +226,11 @@ public class Unit4 {
      */
     public void multiplicationTable(int n) {
         // TODO: Implement this method
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print(i*j +"\t");
+            }
+            System.out.print("\n");
+        }
     }
 }
